@@ -21,3 +21,9 @@ function akv3_social_comment_block_order($order) {
 	return array('comments', 'form');
 }
 add_filter('social_comment_block_order', 'akv3_social_comment_block_order');
+
+function fpdr_noodp() {
+	echo '<meta name="robots" content="noodp">';
+	echo "\n";
+}
+add_action('wp_head','fpdr_noodp');

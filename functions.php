@@ -23,7 +23,6 @@ function akv3_social_comment_block_order($order) {
 add_filter('social_comment_block_order', 'akv3_social_comment_block_order');
 
 function fpdr_noodp() {
-	echo '<meta name="robots" content="noodp">';
-	echo "\n";
+	echo "<meta name=\"robots\" content=\"noodp\" />\n";
 }
 add_action('wp_head','fpdr_noodp');

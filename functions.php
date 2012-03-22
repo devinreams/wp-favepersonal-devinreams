@@ -34,3 +34,18 @@ function fpdr_nocolors() {
 	remove_action('wp_head', 'cfcp_color_css', 8);
 }
 add_action('wp_enqueue_scripts', 'fpdr_nocolors');
+
+// enqueue mint JS for stats
+function minty_javascript_enqueue() {
+	if (!is_admin()) {
+		$minty_js_path = get_bloginfo('home') . '/mint/?js';
+		wp_enqueue_script('minty_js_include', $minty_js_path);
+	}
+}
+add_action('init', 'minty_javascript_enqueue', 0);
+
+// frame-buster for @alexkingorg's "vanity" domain purchases
+function fpdr_noframes() {
+	echo "<script type='text/javascript'>if (top != self) { top.location.replace(self.location.href); }</script>\n";
+}
+add_action('wp_head','fpdr_noframes');

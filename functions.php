@@ -3,8 +3,7 @@
 // if status post is short enough, do not include URL either
 function akv3_social_broadcast_format($format, $post, $service) {
 	if (get_post_format($post) == 'status') {
-		$format = (strlen($post->post_content) <= $service->max_broadcast_length() ? '{content}' : 
-'{content} {url}');
+		$format = (strlen($post->post_content) <= $service->max_broadcast_length() ? '{content}' : '{content} {url}');
 	}
 	return $format;
 }
@@ -12,8 +11,7 @@ add_filter('social_broadcast_format', 'akv3_social_broadcast_format', 10, 3);
 
 // remove URL in comments if comment is short enough to be included
 function akv3_social_comment_broadcast_format($format, $comment, $service) {
-	return (strlen($comment->comment_content) <= $service->max_broadcast_length() ? '{content}' : '{content} 
-{url}');
+	return (strlen($comment->comment_content) <= $service->max_broadcast_length() ? '{content}' : '{content} {url}');
 }
 add_filter('social_comment_broadcast_format', 'akv3_social_comment_broadcast_format', 10, 3);
 
@@ -49,3 +47,4 @@ function fpdr_noframes() {
 	echo "<script type='text/javascript'>if (top != self) { top.location.replace(self.location.href); }</script>\n";
 }
 add_action('wp_head','fpdr_noframes');
+

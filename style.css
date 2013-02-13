@@ -285,3 +285,37 @@ a:active {
 #social .social-actions a:hover {
 	color: #b8ae9c;
 }
+
+
+/* Format Icons */
+
+@media only screen and (min-width: 768px) {
+
+	.entry-meta .entry-icon {
+		background: url(/wp-content/themes/devinreams/assets/glyphish-icons-sprite.png) no-repeat;
+		height: 25px;
+		margin: 10px 0 0 95px;
+		width: 25px;
+	}
+	.format-standard .entry-meta .entry-icon {
+		background-position-y: 0 0;
+	}
+	.format-status .entry-meta .entry-icon {
+		background-position-y: -100px;
+	}
+	.format-link .entry-meta .entry-icon {
+		background-position-y: -200px;
+	}
+	.format-image .entry-meta .entry-icon {
+		background-position-y: -300px;
+	}
+	.format-gallery .entry-meta .entry-icon {
+		background-position-y: -400px;
+	}
+	.format-video .entry-meta .entry-icon {
+		background-position-y: -500px;
+	}
+	.format-quote .entry-meta .entry-icon {
+		background-position-y: -600px;
+	}
+}

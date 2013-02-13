@@ -1,4 +1,13 @@
 <?php
+
+function fpcs_author_redirect() {
+	if(is_author( 'admin' )) { 
+		wp_redirect( '/author/devin/', 301 );
+	}
+}
+add_action('template_redirect', 'fpcs_author_redirect');
+
+
 // set format for status posts to exclude title
 // if status post is short enough, do not include URL either
 function akv3_social_broadcast_format($format, $post, $service) {
@@ -40,11 +49,17 @@ function minty_javascript_enqueue() {
 		wp_enqueue_script('minty_js_include', $minty_js_path);
 	}
 }
-add_action('init', 'minty_javascript_enqueue', 0);
+//add_action('init', 'minty_javascript_enqueue', 0);
 
 // frame-buster for @alexkingorg's "vanity" domain purchases
 function fpdr_noframes() {
 	echo "<script type='text/javascript'>if (top != self) { top.location.replace(self.location.href); }</script>\n";
 }
 add_action('wp_head','fpdr_noframes');
+
+//add_theme_support( 'infinite-scroll', array(
+//    'container'  => 'primary',
+//    'footer'     => 'secondary'
+//) );
+
 

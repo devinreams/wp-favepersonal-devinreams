@@ -23,11 +23,6 @@
 <?php
 
 do_action('favepersonal_excerpt_sidebar_before');
-
-?>
-	<p class="entry-meta-replies h5"><?php comments_popup_link(__('0', 'favepersonal'), __('1', 'favepersonal'), __('%', 'favepersonal')); ?></p>
-<?php
-
 edit_post_link('edit', '<span class="edit-link">', '</span>');
 do_action('favepersonal_excerpt_sidebar_after');
 

@@ -1,12 +1,18 @@
 <?php
 
 function fpcs_author_redirect() {
-	if(is_author( 'admin' )) { 
+	if(is_author( 'admin' )) {
 		wp_redirect( '/author/devin/', 301 );
 	}
 }
 add_action('template_redirect', 'fpcs_author_redirect');
 
+// remove the CSS for Colors from the HTML (if you want to load it via child theme instead)
+
+function favepersonal_remove_inline_color_css() {
+	remove_action('wp_head', 'cfcp_color_css_min', 8);
+}
+add_action('wp', 'favepersonal_remove_inline_color_css', 11);
 
 // set format for status posts to exclude title
 // if status post is short enough, do not include URL either

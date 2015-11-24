@@ -42,6 +42,11 @@ function fpdr_noodp() {
 }
 add_action('wp_head','fpdr_noodp');
 
+function add_sumome() {
+	echo '<script src="//load.sumome.com/" data-sumo-site-id="4a284002efe4d6421cd90947d15c36fc7f4f36b2385612205c40d62fb980b79b" async></script>';
+}
+//add_action('wp_head','add_sumome');
+
 // don't output custom colors, they're in styles.css
 function fpdr_nocolors() {
 	remove_action('wp_head', 'cfcp_color_css', 8);
